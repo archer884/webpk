@@ -1,0 +1,16 @@
+[package]
+name = "webpk"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+strip = "symbols"
+lto = "thin"
+
+[dependencies]
+clap = { version = "4.1.8", features = ["derive", "wrap_help"] }
+image = { version = "0.24.5", features = ["webp-encoder"] }
+rayon = "1.7.0"
+thiserror = "1.0.38"
